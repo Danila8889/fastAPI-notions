@@ -1,11 +1,14 @@
 from pydantic import BaseModel
 
 
-class NotionSchema(BaseModel):
+class ReadNotion(BaseModel):
+    id: int
     network: str
 
-class ReadNotion(NotionSchema):
-    id: int
 
-class CreateNotion(NotionSchema):
-    pass
+class CreateNotion(BaseModel):
+    network: str
+
+
+class UpdateNotion(BaseModel):
+    network: str | None

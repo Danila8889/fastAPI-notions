@@ -1,8 +1,7 @@
-from typing import List
-
 from fastapi import APIRouter
-from schemas import ReadNotion
 
+from api.notion_views import router
 
 notions_router = APIRouter(prefix='/notions', tags=['notions'])
 
+notions_router.include_router(router=router)
